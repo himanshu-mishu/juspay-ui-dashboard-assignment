@@ -11,7 +11,7 @@ export default function NavSection({ section }) {
   return (
     <section className="mb-1">
       <h2
-        className="font-inter font-normal text-[14px] leading-[20px] py-2 text-center"
+        className="font-inter font-normal text-[14px] leading-5 py-2 text-center"
         style={{
           background: "rgba(28, 28, 28, 0.40)",
           color: "#1c1c1c",

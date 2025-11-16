@@ -22,7 +22,7 @@ export default function NavItem({ item, isOpen, onClick, sectionKey }) {
     <li className="mb-1">
       <button
         onClick={hasSubItems ? onClick : undefined}
-        className="flex items-center justify-between w-full px-4 py-2 rounded font-inter text-[14px] leading-[20px] font-normal bg-white text-[#1c1c1c]"
+        className="flex items-center justify-between w-full px-4 py-2 rounded font-inter text-[14px] leading-5 font-normal bg-white text-[#1c1c1c]"
         style={{ letterSpacing: 0 }}
       >
         <span className="flex items-center gap-2">
@@ -54,7 +54,7 @@ export default function NavItem({ item, isOpen, onClick, sectionKey }) {
               style={{ fontWeight: 400, letterSpacing: 0 }}
             >
               {sectionKey === "favorites" && (
-                <span className="w-[6px] h-[6px] rounded-full bg-[#1C1C1C33] mr-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C33] mr-2" />
               )}
               {sub.label}
             </li>
