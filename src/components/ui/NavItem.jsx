@@ -1,7 +1,7 @@
 import {
   MdDashboard, MdShoppingCart, MdFolder, MdImportContacts, MdPerson, MdSettings, MdBusinessCenter, MdArticle, MdShare,
 } from "react-icons/md";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronRight, FiChevronDown } from "react-icons/fi";
 
 const icons = {
   default: MdDashboard,
@@ -15,37 +15,64 @@ const icons = {
   social: MdShare,
 };
 
-export default function NavItem({ item, isOpen, onClick, sectionKey }) {
-  const hasSubItems = item.expandable && Array.isArray(item.subItems);
+export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
+  if (!item) return null;
+  const hasSubItems = !!item.expandable && Array.isArray(item.subItems);
+  const isDashboard = sectionKey === "dashboard";
+  const isPages = sectionKey === "pages";
+
+  // Padding left for active dashboard highlight
+  const paddingClass = isDashboard && active ? "pl-5" : "";
 
   return (
-    <li className="mb-1">
+    <li className="mb-1 relative">
       <button
         onClick={hasSubItems ? onClick : undefined}
-        className="flex items-center justify-between w-full px-4 py-2 rounded font-inter text-[14px] leading-5 font-normal bg-white text-[#1c1c1c]"
+        className={`
+          flex items-center w-full px-4 py-2 rounded font-inter text-[14px] leading-5 font-normal
+          ${isDashboard && active ? "bg-[#F5F5F5] relative" : "bg-white"}
+          text-[#1c1c1c] ${paddingClass}
+        `}
         style={{ letterSpacing: 0 }}
       >
-        <span className="flex items-center gap-2">
-          {item.icon && icons[item.icon] && (
-            <span className="text-gray-700">
-              {icons[item.icon]({ className: "w-5 h-5" })}
-            </span>
-          )}
-          {sectionKey === "favorites" && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C33]" />
-              )}
-          {item.label}
-        </span>
-        {hasSubItems && (
-          <FiChevronDown
-            className={`ml-2 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+        {/* Small active vertical rectangle */}
+        {isDashboard && active && (
+          <span
+            className="absolute"
             style={{
-              borderRadius: "2px",
-              width: "9px",
-              height: "16px",
+              left: '8px',
+              top: '10px',
+              width: '4px',
+              height: '16px',
+              background: '#1C1C1C',
+              opacity: 1,
+              borderRadius: '16px'
             }}
           />
         )}
+
+        <span className="flex items-center gap-2 relative z-10">
+  {/* Chevron logic */}
+  {hasSubItems && (
+    sectionKey === "pages"
+      ? (
+        (active && isOpen)
+          ? <FiChevronDown className="text-gray-400 text-base" />
+          : <FiChevronRight className="text-gray-400 text-base" />
+      )
+      : (!active && <FiChevronRight className="text-gray-400 text-base" />)
+  )}
+  {item.icon && icons[item.icon] && (
+    <span className="text-[#232e3e]">
+      {icons[item.icon]({ className: "w-5 h-5" })}
+    </span>
+  )}
+  {sectionKey === "favorites" && (
+    <span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C33]" />
+  )}
+  {item.label}
+</span>
+
       </button>
       {hasSubItems && isOpen && (
         <ul id={`${item.key}-submenu`} className="pl-8 py-1 bg-white">
@@ -55,7 +82,6 @@ export default function NavItem({ item, isOpen, onClick, sectionKey }) {
               className="flex items-center py-2 font-inter text-[14px] bg-white text-[#1c1c1c]"
               style={{ fontWeight: 400, letterSpacing: 0 }}
             >
-              
               {sub.label}
             </li>
           ))}

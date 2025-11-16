@@ -3,9 +3,11 @@ import NavItem from "./NavItem";
 
 export default function NavSection({ section }) {
   const [openItemKey, setOpenItemKey] = useState(null);
+  const [activeItemKey, setActiveItemKey] = useState(null);
 
   const handleNavItemClick = key => {
     setOpenItemKey(prev => (prev === key ? null : key));
+    setActiveItemKey(key);
   };
 
   return (
@@ -28,6 +30,7 @@ export default function NavSection({ section }) {
             isOpen={openItemKey === item.key}
             onClick={() => handleNavItemClick(item.key)}
             sectionKey={section.key}
+            active={activeItemKey === item.key}
           />
         ))}
       </ul>
