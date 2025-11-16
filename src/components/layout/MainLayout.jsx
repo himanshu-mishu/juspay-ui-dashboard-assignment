@@ -1,15 +1,11 @@
 import Sidebar from "./Sidebar";
-import Topbar from "./Topbar";
 
 export default function MainLayout({ children }) {
   return (
-    <div className="flex h-screen w-screen bg-gray-100">
+    <div className="flex min-h-screen min-w-full bg-[#f4f5fa] font-inter">
       <Sidebar />
       <div className="flex flex-col flex-1">
-        <Topbar />
-        <main className="flex-1 p-6">
-          {children}
-        </main>
+        <main className="flex-1 p-6 bg-[#f4f5fa]">{children}</main>
       </div>
     </div>
   );

@@ -1,4 +1,15 @@
 // src/data/sidebarData.js
+export const iconMap = {
+  default: "default",
+  ecommerce: "ecommerce",
+  projects: "projects",
+  courses: "courses",
+  profile: "profile",
+  account: "account",
+  corporate: "corporate",
+  blog: "blog",
+  social: "social",
+};
 
 export const navSections = [
   {
@@ -16,7 +27,7 @@ export const navSections = [
       {
         key: "default",
         label: "Default",
-        icon: "default",
+        icon: iconMap.default,
         expandable: true,
         subItems: [
           { key: "analytics", label: "Analytics", href: "/default/analytics" },
@@ -28,7 +39,7 @@ export const navSections = [
       {
         key: "ecommerce",
         label: "eCommerce",
-        icon: "ecommerce",
+        icon: iconMap.ecommerce,
         expandable: true,
         subItems: [
           { key: "orders", label: "Orders", href: "/ecommerce/orders" },
@@ -44,7 +55,7 @@ export const navSections = [
       {
         key: "projects",
         label: "Projects",
-        icon: "projects",
+        icon: iconMap.projects,
         expandable: true,
         subItems: [
           { key: "list", label: "Project List", href: "/projects/list" },
@@ -60,7 +71,7 @@ export const navSections = [
       {
         key: "courses",
         label: "Online Courses",
-        icon: "courses",
+        icon: iconMap.courses,
         expandable: true,
         subItems: [
           { key: "catalog", label: "Course Catalog", href: "/courses/catalog" },
@@ -82,7 +93,7 @@ export const navSections = [
       {
         key: "user-profile",
         label: "User Profile",
-        icon: "profile",
+        icon: iconMap.profile,
         expandable: true,
         subItems: [
           { key: "overview", label: "Overview", href: "/profile/overview" },
@@ -95,7 +106,7 @@ export const navSections = [
       {
         key: "account",
         label: "Account",
-        icon: "account",
+        icon: iconMap.account,
         expandable: true,
         subItems: [
           {
@@ -116,7 +127,7 @@ export const navSections = [
       {
         key: "corporate",
         label: "Corporate",
-        icon: "corporate",
+        icon: iconMap.corporate,
         expandable: true,
         subItems: [
           { key: "about", label: "About Us", href: "/corporate/about" },
@@ -137,7 +148,7 @@ export const navSections = [
       {
         key: "blog",
         label: "Blog",
-        icon: "blog",
+        icon: iconMap.blog,
         expandable: true,
         subItems: [
           { key: "latest", label: "Latest Articles", href: "/blog/latest" },
@@ -162,7 +173,7 @@ export const navSections = [
       {
         key: "social",
         label: "Social",
-        icon: "social",
+        icon: iconMap.social,
         expandable: true,
         subItems: [
           {
