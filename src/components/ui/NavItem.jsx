@@ -57,10 +57,10 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
     sectionKey === "pages"
       ? (
         (active && isOpen)
-          ? <FiChevronDown className="text-gray-400 text-base" />
-          : <FiChevronRight className="text-gray-400 text-base" />
+          ? <FiChevronDown className="text-gray-400 text-base style={{ opacity: 0.2 }}" />
+          : <FiChevronRight className="text-gray-400 text-base style={{ opacity: 0.2 }}" />
       )
-      : (!active && <FiChevronRight className="text-gray-400 text-base" />)
+      : (!active && <FiChevronRight className="text-gray-400 text-base style={{ opacity: 0.2 }}" />)
   )}
   {item.icon && icons[item.icon] && (
     <span className="text-[#232e3e]">
