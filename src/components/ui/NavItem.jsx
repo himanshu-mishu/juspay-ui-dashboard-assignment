@@ -31,13 +31,15 @@ export default function NavItem({ item, isOpen, onClick, sectionKey }) {
               {icons[item.icon]({ className: "w-5 h-5" })}
             </span>
           )}
+          {sectionKey === "favorites" && (
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C33]" />
+              )}
           {item.label}
         </span>
         {hasSubItems && (
           <FiChevronDown
             className={`ml-2 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
             style={{
-              background: "#1C1C1C33",
               borderRadius: "2px",
               width: "9px",
               height: "16px",
@@ -53,9 +55,7 @@ export default function NavItem({ item, isOpen, onClick, sectionKey }) {
               className="flex items-center py-2 font-inter text-[14px] bg-white text-[#1c1c1c]"
               style={{ fontWeight: 400, letterSpacing: 0 }}
             >
-              {sectionKey === "favorites" && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C33] mr-2" />
-              )}
+              
               {sub.label}
             </li>
           ))}
