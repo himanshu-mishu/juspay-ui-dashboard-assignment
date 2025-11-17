@@ -3,19 +3,37 @@ import TopSellingTable from "./components/dashboard/TopSellingTable.jsx";
 import NotificationList from "./components/notifications/NotificationList.jsx";
 import ActivityList from "./components/notifications/ActivityList.jsx";
 import ContactList from "./components/notifications/ContactList.jsx";
+import KPICards from "./components/dashboard/KPICards";
+
 function App() {
   return (
     <MainLayout>
       <div className="flex gap-6">
         {/* Main dashboard content */}
         <div className="flex-1">
-          <TopSellingTable />
+          <div className="bg-white rounded-2xl p-8 mb-8 shadow-sm">
+            <div className="flex gap-7 mb-10">
+              {/* KPI Cards left */}
+              <div className="w-1/2">
+                <h2 className="text-sm font-semibold mb-2">eCommerce</h2>
+                <KPICards />
+              </div>
+              {/* Chart right */}
+              <div className="w-1/2">
+                <div className="bg-white border border-[#e5e7eb] rounded-2xl p-6 min-h-[220px]">
+                  <span className="font-inter text-[14px] font-semibold mb-4 block">Projections vs Actuals</span>
+                  {/* Add chart here */}
+                </div>
+              </div>
+            </div>
+            <TopSellingTable />
+          </div>
         </div>
-        {/* Notification section placeholder - fixed width */}
+        {/* Notification panel */}
         <aside className="w-[300px] bg-white border-l p-4 rounded-md shadow-sm">
           <NotificationList />
-  <ActivityList />
-  <ContactList />
+          <ActivityList />
+          <ContactList />
         </aside>
       </div>
     </MainLayout>
