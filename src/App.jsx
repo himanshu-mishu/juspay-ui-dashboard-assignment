@@ -1,10 +1,11 @@
 import MainLayout from "./components/layout/MainLayout";
+import TopSellingTable from "./components/dashboard/TopSellingTable.jsx";
 
 function App() {
   return (
     <MainLayout>
       <div>
-        <h1 className="text-xl font-bold">Dashboard Content</h1>
+        <TopSellingTable />
       </div>
     </MainLayout>
   );
