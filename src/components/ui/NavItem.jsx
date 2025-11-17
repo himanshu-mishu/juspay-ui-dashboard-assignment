@@ -20,8 +20,7 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
   const hasSubItems = !!item.expandable && Array.isArray(item.subItems);
   const isDashboard = sectionKey === "dashboard";
   const isPages = sectionKey === "pages";
-  const paddingClass = isDashboard && active ? "pl-5" : "";
-
+const paddingClass = isDashboard ? "pl-5" : "";
   return (
     <li className="mb-1 relative">
       <button
