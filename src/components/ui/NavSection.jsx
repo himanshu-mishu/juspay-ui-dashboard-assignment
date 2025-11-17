@@ -8,9 +8,10 @@ export default function NavSection({ section }) {
   const handleNavItemClick = (key, expandable) => {
     if (expandable) {
       setOpenItemKey(prev => (prev === key ? null : key));
+    } else {
+      setOpenItemKey(null); // Close all submenus if a non-expandable item is clicked
     }
     setActiveItemKey(key);
-    // (Optional) Route to new page or custom logic here
   };
 
   return (
@@ -21,21 +22,21 @@ export default function NavSection({ section }) {
         paddingLeft: "12px"
       }}
     >
-      {/* Conditional rendering for section title */}
+      {/* Show Favorites + Recently for favorites only */}
       {section.key === "favorites" ? (
         <h2
-          className="font-inter font-normal text-[14px] leading-5 py-2 text-left ml-2 pl-2 flex items-center gap-2"
+          className="font-inter font-normal text-[14px] leading-5 py-2 text-left ml-2 pl-2 flex items-center"
           style={{
             color: "#1c1c1c",
             letterSpacing: 0,
             background: "transparent",
-            opacity: 0.4
+            opacity: 0.4,
           }}
         >
           Favorites
           <span
+            className="pl-3"
             style={{
-               paddingLeft: "12px",   
               opacity: 0.18,
               fontWeight: 400,
               fontSize: "13px",
