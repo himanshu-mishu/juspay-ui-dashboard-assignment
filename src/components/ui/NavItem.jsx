@@ -51,9 +51,9 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
           {hasSubItems && (
             isPages
               ? ((active && isOpen)
-                ? <FiChevronDown className="text-gray-400 text-base" style={{ opacity: 0.2 }} />
-                : <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.2 }} />)
-              : (!active && <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.2 }} />)
+                ? <FiChevronDown className="text-gray-400 text-base" style={{ opacity: 0.4 }} />
+                : <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.4 }} />)
+              : (!active && <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.4 }} />)
           )}
           {item.icon && icons[item.icon] && (
             <span className="text-[#232e3e]">{icons[item.icon]({ className: "w-5 h-5" })}</span>

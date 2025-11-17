@@ -14,7 +14,7 @@ export default function NavSection({ section }) {
   };
 
   return (
-    <section className="mb-1">
+    <section className="mb-1" style={{paddingBottom: "12px", paddingLeft: "12px"}}>
       <h2
         className="font-inter font-normal text-[14px] leading-5 py-2 text-left text-[#1c1c1c] ml-2 pl-2"
         style={{
