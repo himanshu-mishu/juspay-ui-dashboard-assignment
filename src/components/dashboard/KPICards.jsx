@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { kpiData } from "../../data/kpiData";
 
-// Dynamic card backgrounds
 const cardBg = {
   Customers: "bg-[#E3F5FF]",
   Orders: "bg-[#F7F9FB]",
@@ -21,9 +20,7 @@ function KPICard({ title, value, change, positive }) {
   const bg = cardBg[title];
   return (
     <Card className={`${bg} ${borderClass} p-6 flex flex-col justify-between min-h-[120px]`}>
-      {/* Title */}
       <span className="font-inter font-semibold text-[14px] leading-5 mb-2">{title}</span>
-      {/* Number and % beside each other */}
       <div className="flex items-end gap-2 mb-2">
         <span className="font-inter font-semibold text-[24px] leading-9">
           {value}
