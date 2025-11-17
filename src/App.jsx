@@ -13,14 +13,14 @@ function App() {
         {/* Main dashboard content */}
         <div className="flex-1">
           <div className="bg-white rounded-2xl p-8 mb-8 shadow-sm">
-            <div className="flex gap-7 mb-10 items-start">
+            <h2 className="text-sm font-semibold mb-2">eCommerce</h2>
+            <div className="flex gap-7 mb-10 items-stretch">
               {/* KPI Cards left */}
-              <div className="w-1/2">
-                <h2 className="text-sm font-semibold mb-2">eCommerce</h2>
+              <div className="w-1/2 flex flex-col justify-between">
                 <KPICards />
               </div>
               {/* Chart right */}
-              <div className="w-1/2">
+              <div className="w-1/2 flex flex-col justify-between">
                 <ProjectionsGraph />
               </div>
             </div>
