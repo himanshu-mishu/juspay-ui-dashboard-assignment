@@ -29,7 +29,7 @@ function App() {
               <div className="flex-1">
                 <RevenueChart />
               </div>
-              <div className="min-w-[240px] flex-shrink-0">
+              <div className="min-w-60 shrink-0">
                 <RevenueByLocation />
               </div>
             </div>
