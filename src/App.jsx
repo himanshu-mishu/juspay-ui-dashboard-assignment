@@ -1,8 +1,8 @@
 import MainLayout from "./components/layout/MainLayout";
 import TopSellingTable from "./components/dashboard/TopSellingTable.jsx";
-import NotificationList from "./components/dashboard/NotificationList.jsx";
-import ActivityList from "./components/dashboard/ActivityList.jsx";
-import ContactList from "./components/dashboard/ContactList.jsx";
+import NotificationList from "./components/notifications/NotificationList.jsx";
+import ActivityList from "./components/notifications/ActivityList.jsx";
+import ContactList from "./components/notifications/ContactList.jsx";
 function App() {
   return (
     <MainLayout>

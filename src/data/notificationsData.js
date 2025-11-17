@@ -71,7 +71,7 @@ export const activities = [
   {
     id: 4,
     icon: FaBell,
-    description: "Modified A data in Page X",
+    description: "Modified A data in Page",
     timestamp: "Today, 11:59 AM",
     profile: profileImages.andiLane,
     name: "Andi Lane",
