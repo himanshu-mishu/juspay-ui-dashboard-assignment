@@ -20,11 +20,12 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
   const hasSubItems = !!item.expandable && Array.isArray(item.subItems);
   const isDashboard = sectionKey === "dashboard";
   const isPages = sectionKey === "pages";
-const paddingClass = isDashboard ? "pl-5" : "";
+  const paddingClass = isDashboard ? "pl-5" : "";
+
   return (
     <li className="mb-1 relative">
       <button
-        onClick= {onClick} 
+        onClick={onClick}
         className={`
           flex items-center w-full px-4 py-2 rounded font-inter text-[14px] leading-5 font-normal
           ${isDashboard && active ? "bg-[#F5F5F5] relative" : "bg-white"}
@@ -46,13 +47,17 @@ const paddingClass = isDashboard ? "pl-5" : "";
             }}
           />
         )}
-        <span className="flex items-center gap-2 relative z-10">
-          {hasSubItems && (
-            isPages
-              ? ((active && isOpen)
-                ? <FiChevronDown className="text-gray-400 text-base" style={{ opacity: 0.4 }} />
-                : <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.4 }} />)
-              : (!active && <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.4 }} />)
+        {/* Compact gap between chevron, icon, label */}
+        <span className="flex items-center gap-1 relative z-10">
+          {/* Chevron for dashboard: show only if NOT active */}
+          {isDashboard && !active && (
+            <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.2 }} />
+          )}
+          {/* Pages: original chevron logic for sub-items */}
+          {hasSubItems && isPages && (
+            (active && isOpen)
+              ? <FiChevronDown className="text-gray-400 text-base" style={{ opacity: 0.4 }} />
+              : <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.4 }} />
           )}
           {item.icon && icons[item.icon] && (
             <span className="text-[#232e3e]">{icons[item.icon]({ className: "w-5 h-5" })}</span>
