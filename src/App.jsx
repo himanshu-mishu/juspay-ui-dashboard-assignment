@@ -4,6 +4,7 @@ import NotificationList from "./components/notifications/NotificationList.jsx";
 import ActivityList from "./components/notifications/ActivityList.jsx";
 import ContactList from "./components/notifications/ContactList.jsx";
 import KPICards from "./components/dashboard/KPICards";
+import ProjectionsGraph from "./components/dashboard/ProjectionsGraph.jsx";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         {/* Main dashboard content */}
         <div className="flex-1">
           <div className="bg-white rounded-2xl p-8 mb-8 shadow-sm">
-            <div className="flex gap-7 mb-10">
+            <div className="flex gap-7 mb-10 items-start">
               {/* KPI Cards left */}
               <div className="w-1/2">
                 <h2 className="text-sm font-semibold mb-2">eCommerce</h2>
@@ -20,10 +21,7 @@ function App() {
               </div>
               {/* Chart right */}
               <div className="w-1/2">
-                <div className="bg-white border border-[#e5e7eb] rounded-2xl p-6 min-h-[220px]">
-                  <span className="font-inter text-[14px] font-semibold mb-4 block">Projections vs Actuals</span>
-                  {/* Add chart here */}
-                </div>
+                <ProjectionsGraph />
               </div>
             </div>
             <TopSellingTable />
