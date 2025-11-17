@@ -28,12 +28,8 @@ export const navSections = [
         key: "default",
         label: "Default",
         icon: iconMap.default,
-        expandable: true,
-        subItems: [
-          { key: "analytics", label: "Analytics", href: "/default/analytics" },
-          { key: "overview", label: "Overview", href: "/default/overview" },
-          { key: "trends", label: "Trends", href: "/default/trends" },
-        ],
+        expandable: false,
+
         href: "/default",
       },
       {

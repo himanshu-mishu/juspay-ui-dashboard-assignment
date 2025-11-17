@@ -11,7 +11,7 @@ export default function Avatar() {
         />
       </div>
       <div className="flex flex-col leading-tight">
-        <span className="text-[15px] font-semibold text-[#232e3e]">Himanshu Kumar</span>
+        <span className="text-[14px] regular text-[#232e3e]">Himanshu Kumar</span>
       </div>
     </div>
   );
