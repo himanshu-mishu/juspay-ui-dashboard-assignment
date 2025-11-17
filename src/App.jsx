@@ -1,6 +1,8 @@
 import MainLayout from "./components/layout/MainLayout";
 import TopSellingTable from "./components/dashboard/TopSellingTable.jsx";
-
+import NotificationList from "./components/dashboard/NotificationList.jsx";
+import ActivityList from "./components/dashboard/ActivityList.jsx";
+import ContactList from "./components/dashboard/ContactList.jsx";
 function App() {
   return (
     <MainLayout>
@@ -11,7 +13,9 @@ function App() {
         </div>
         {/* Notification section placeholder - fixed width */}
         <aside className="w-[300px] bg-white border-l p-4 rounded-md shadow-sm">
-          <h2 className="text-lg font-semibold mb-4">Notifications</h2>
+          <NotificationList />
+  <ActivityList />
+  <ContactList />
         </aside>
       </div>
     </MainLayout>
