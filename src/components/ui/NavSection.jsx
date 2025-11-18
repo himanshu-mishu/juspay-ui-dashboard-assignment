@@ -9,58 +9,25 @@ export default function NavSection({ section }) {
     if (expandable) {
       setOpenItemKey(prev => (prev === key ? null : key));
     } else {
-      setOpenItemKey(null); // Close all submenus if a non-expandable item is clicked
+      setOpenItemKey(null);
     }
     setActiveItemKey(key);
   };
 
   return (
-    <section
-      className="mb-1"
-      style={{
-        paddingBottom: "12px",
-        paddingLeft: "12px"
-      }}
-    >
-      {/* Show Favorites + Recently for favorites only */}
+    <section className="mb-1 pb-3 pl-3">
       {section.key === "favorites" ? (
-        <h2
-          className="font-inter font-normal text-[14px] leading-5 py-2 text-left ml-2 pl-2 flex items-center"
-          style={{
-            color: "#1c1c1c",
-            letterSpacing: 0,
-            background: "transparent",
-            opacity: 0.4,
-          }}
-        >
+        <h2 className="font-inter font-normal text-[14px] leading-5 py-2 flex items-center text-[#232e3e] dark:text-gray-200 opacity-60">
           Favorites
-          <span
-            className="pl-3"
-            style={{
-              opacity: 0.18,
-              fontWeight: 400,
-              fontSize: "13px",
-              letterSpacing: "0.01em"
-            }}
-          >
-            Recently
-          </span>
+          <span className="pl-3 opacity-60 font-normal text-[13px]">Recently</span>
         </h2>
       ) : (
-        <h2
-          className="font-inter font-normal text-[14px] leading-5 py-2 text-left ml-2 pl-2"
-          style={{
-            color: "#1c1c1c",
-            letterSpacing: 0,
-            background: "transparent",
-            opacity: 0.4
-          }}
-        >
+        <h2 className="font-inter font-normal text-[14px] leading-5 py-2 text-[#232e3e] dark:text-gray-200 opacity-60">
           {section.title}
         </h2>
       )}
 
-      <ul style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+      <ul style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
         {section.items.map(item => (
           <NavItem
             key={item.key}

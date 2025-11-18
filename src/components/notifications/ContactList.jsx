@@ -3,25 +3,14 @@ import { contacts } from "../../data/notificationsData";
 export default function ContactList() {
   return (
     <div>
-      {/* Section heading styling */}
-      <h3 className="font-inter font-semibold text-[14px] leading-5 tracking-normal mb-2">
+      <h3 className="font-inter font-semibold text-[14px] mb-2 text-[#232e3e] dark:text-gray-200">
         Contacts
       </h3>
       <ul>
         {contacts.map(contact => (
-          <li
-            key={contact.id}
-            className="flex items-center gap-2 py-1"
-          >
-            <img
-              src={contact.profile}
-              alt={contact.name}
-              className="w-6 h-6 rounded-full"
-              style={{ minWidth: 24, minHeight: 24 }}
-            />
-            <span className="font-inter font-normal text-[14px] leading-5 tracking-normal p-1">
-              {contact.name}
-            </span>
+          <li key={contact.id} className="flex items-center gap-2 py-1 text-[#232e3e] dark:text-gray-200">
+            <img src={contact.profile} alt={contact.name} className="w-6 h-6 rounded-full" />
+            <span className="font-inter text-[14px]">{contact.name}</span>
           </li>
         ))}
       </ul>

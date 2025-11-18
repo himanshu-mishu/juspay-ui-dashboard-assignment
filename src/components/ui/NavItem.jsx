@@ -23,13 +23,13 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
   const paddingClass = isDashboard ? "pl-5" : "";
 
   return (
-    <li className="mb-1 relative">
+    <li className="mb-1 relative text-[#232e3e] dark:text-gray-200">
       <button
         onClick={onClick}
         className={`
           flex items-center w-full px-4 py-2 rounded font-inter text-[14px] leading-5 font-normal
-          ${isDashboard && active ? "bg-[#F5F5F5] relative" : "bg-white"}
-          text-[#1c1c1c] ${paddingClass}
+          ${isDashboard && active ? "bg-[#F5F5F5] dark:bg-[#20242F] relative" : "bg-white dark:bg-[#23272F]"}
+          text-[#232e3e] dark:text-gray-200 ${paddingClass} transition-colors
         `}
         style={{ letterSpacing: 0 }}
       >
@@ -47,20 +47,17 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
             }}
           />
         )}
-        {/* Compact gap between chevron, icon, label */}
         <span className="flex items-center gap-1 relative z-10">
-          {/* Chevron for dashboard: show only if NOT active */}
           {isDashboard && !active && (
             <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.2 }} />
           )}
-          {/* Pages: original chevron logic for sub-items */}
           {hasSubItems && isPages && (
             (active && isOpen)
               ? <FiChevronDown className="text-gray-400 text-base" style={{ opacity: 0.4 }} />
               : <FiChevronRight className="text-gray-400 text-base" style={{ opacity: 0.4 }} />
           )}
           {item.icon && icons[item.icon] && (
-            <span className="text-[#232e3e]">{icons[item.icon]({ className: "w-5 h-5" })}</span>
+            <span className="text-[#232e3e] dark:text-gray-200">{icons[item.icon]({ className: "w-5 h-5" })}</span>
           )}
           {sectionKey === "favorites" && (
             <span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C33]" />
@@ -69,11 +66,11 @@ export default function NavItem({ item, isOpen, onClick, sectionKey, active }) {
         </span>
       </button>
       {hasSubItems && isOpen && (
-        <ul id={`${item.key}-submenu`} className="pl-8 py-1 bg-white">
+        <ul id={`${item.key}-submenu`} className="pl-8 py-1 bg-white dark:bg-[#23272F] text-[#232e3e] dark:text-gray-200">
           {item.subItems.map(sub => (
             <li
               key={sub.key}
-              className="flex items-center py-2 font-inter text-[14px] bg-white text-[#1c1c1c]"
+              className="flex items-center py-2 font-inter text-[14px] text-[#232e3e] dark:text-gray-200 bg-white dark:bg-[#23272F]"
               style={{ fontWeight: 400, letterSpacing: 0 }}
             >
               {sub.label}
