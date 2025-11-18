@@ -8,6 +8,7 @@ import ProjectionsGraph from "./components/dashboard/ProjectionsGraph.jsx";
 import RevenueByLocation from "./components/dashboard/RevenueByLocation.jsx";
 import RevenueChart from "./components/dashboard/RevenueChart.jsx";
 import TotalSalesChart from "./components/dashboard/TotalSalesChart.jsx";
+import TopBar from "./components/layout/TopBar.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="flex gap-6">
         <div className="flex-1">
           <div className="bg-white rounded-2xl p-8 mb-8 shadow-sm">
+             <TopBar />
             {/* Heading */}
             <h2 className="text-sm font-semibold mb-2">eCommerce</h2>
             {/* KPIs + Projections Graph */}
