@@ -7,6 +7,7 @@ import KPICards from "./components/dashboard/KPICards";
 import ProjectionsGraph from "./components/dashboard/ProjectionsGraph.jsx";
 import RevenueByLocation from "./components/dashboard/RevenueByLocation.jsx";
 import RevenueChart from "./components/dashboard/RevenueChart.jsx";
+import TotalSalesChart from "./components/dashboard/TotalSalesChart.jsx";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <div className="flex gap-6">
         <div className="flex-1">
           <div className="bg-white rounded-2xl p-8 mb-8 shadow-sm">
+            {/* Heading */}
             <h2 className="text-sm font-semibold mb-2">eCommerce</h2>
-            {/* Top row: KPI cards & projections graph */}
+            {/* KPIs + Projections Graph */}
             <div className="flex gap-7 mb-8 items-stretch">
               <div className="w-1/2 flex flex-col justify-between">
                 <KPICards />
@@ -33,7 +35,15 @@ function App() {
                 <RevenueByLocation />
               </div>
             </div>
-            <TopSellingTable />
+            {/* Top Selling Products and Total Sales side-by-side */}
+            <div className="flex gap-7 mt-8">
+              <div className="flex-1">
+                <TopSellingTable />
+              </div>
+              <div className="min-w-[260px]">
+                <TotalSalesChart />
+              </div>
+            </div>
           </div>
         </div>
         {/* Notification panel */}
