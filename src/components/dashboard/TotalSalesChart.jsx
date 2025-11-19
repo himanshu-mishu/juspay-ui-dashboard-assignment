@@ -3,7 +3,7 @@ import { totalSalesData } from "../../data/totalSalesData";
 
 export default function TotalSalesChart() {
   return (
-    <div className="bg-white dark:bg-[#23272F] rounded-2xl p-6 border border-[#e5e7eb] dark:border-[#23272F] h-full flex flex-col justify-between min-h-[320px] w-full">
+    <div className="bg-white dark:bg-[#23272F] rounded-2xl p-6 border border-[#e5e7eb] dark:border-[#23272F] h-full flex flex-col justify-between min-h-80 w-full">
       <div className="font-inter font-semibold text-[14px] mb-2 dark:text-white">
         Total Sales
       </div>

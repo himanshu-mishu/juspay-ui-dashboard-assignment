@@ -1,7 +1,7 @@
 import { ThemeProvider } from "./contexts/ThemeContext";
 import MainLayout from "./components/layout/MainLayout";
 import Sidebar from "./components/layout/Sidebar";
-import TopBar from "./components/layout/TopBar";
+import TopBar from "./components/layout/Topbar.jsx";
 import KPICards from "./components/dashboard/KPICards";
 import ProjectionsGraph from "./components/dashboard/ProjectionsGraph";
 import RevenueChart from "./components/dashboard/RevenueChart";
